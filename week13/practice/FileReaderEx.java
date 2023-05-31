@@ -9,7 +9,7 @@ public class FileReaderEx {
 		FileReader fin = null;
 		
 		try {
-			fin = new FileReader( "c:\\windows\\system.ini" );
+			fin = new FileReader( "" );
 			int c;
 			
 			while( (c = fin.read() ) != -1 ) {
@@ -17,9 +17,14 @@ public class FileReaderEx {
 			}
 			fin.close();
 		}
+		catch (FileNotFoundException e){
+			System.out.println("파일 오픈 오류");
+		}
+		
 		catch (IOException e) {
 			System.out.println("입출력 오류");
 		}
+		
 	}
 
 }
